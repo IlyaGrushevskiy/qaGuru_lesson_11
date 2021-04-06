@@ -16,7 +16,7 @@ public class SmokeTest {
     @Test
     @DisplayName("Check page \"About Us\"")
     void CheckPageAboutUs() {
-        open("https://ifellow.ru/");
+        open("https://ifellow.ru");
         sleep(2000);
         if ($x("//button[@class = 'app-close']").isDisplayed())
             $x("//button[@class = 'app-close']").click();
