@@ -12,9 +12,10 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$x;
 
 public class SmokeTest {
+
     @BeforeEach
     public void beforeFunction() {
-        open("");
+        open("https://ifellow.ru/");
     }
 
     @Test
