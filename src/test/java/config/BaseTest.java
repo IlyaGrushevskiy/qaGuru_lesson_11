@@ -1,4 +1,5 @@
 package config;
+
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
@@ -15,7 +16,7 @@ public class BaseTest {
 
     @BeforeAll
     static void setup() {
-        //Configuration.baseUrl = "https://ifellow.ru/";
+        Configuration.baseUrl = "http://demo.wsoft.ru";
         final EnvironmentConfig config = ConfigFactory.create(EnvironmentConfig.class, System.getProperties());
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.browser = config.browser();

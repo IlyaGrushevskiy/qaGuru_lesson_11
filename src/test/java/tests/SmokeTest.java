@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.ElementsCollection;
+import config.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -9,14 +10,17 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$$x;
 
-public class SmokeTest {
+public class SmokeTest extends BaseTest {
+
+    @BeforeEach
+    public void beforeFunction() {
+        open("");
+    }
 
     @Test
     @DisplayName("Check page \"About Us\"")
     void CheckPageAboutUs() {
-        open("https://ifellow.ru");
         sleep(2000);
         if ($x("//button[@class = 'app-close']").isDisplayed())
             $x("//button[@class = 'app-close']").click();
