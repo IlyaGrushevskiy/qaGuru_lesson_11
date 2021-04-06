@@ -26,11 +26,6 @@ public class ConfigHelper {
         return getWebVideoStorage() != null;
     }
 
-    private static AuthorizationConfig getAuthorizationConfig() {
-        return ConfigFactory.newInstance().create(
-                AuthorizationConfig.class, System.getProperties());
-    }
-
     private static WebConfig getWebConfig() {
         return ConfigFactory.newInstance().create(WebConfig.class, System.getProperties());
     }
