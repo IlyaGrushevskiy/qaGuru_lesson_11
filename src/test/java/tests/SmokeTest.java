@@ -13,11 +13,6 @@ import static com.codeborne.selenide.Selenide.$$x;
 
 public class SmokeTest {
 
-    @BeforeEach
-    public void beforeFunction() {
-        open("https://ifellow.ru/");
-    }
-
     @Test
     @DisplayName("Check page \"About Us\"")
     void CheckPageAboutUs() {
