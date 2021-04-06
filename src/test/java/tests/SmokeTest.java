@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.$$x;
 public class SmokeTest {
     @BeforeEach
     public void beforeFunction() {
-        open("https://ifellow.ru/");
+        open("");
     }
 
     @Test
@@ -94,7 +94,7 @@ public class SmokeTest {
         sleep(2000);
         if ($x("//button[@class = 'app-close']").isDisplayed())
             $x("//button[@class = 'app-close']").click();
-        $x("//nav[@class = 'categories']/a[text() = 'Москва']").click();
+        $x("//nav[@class = 'categories']/a[text() = 'Карьера']").click();
 
         $x("//span[@class = 'multiselect__placeholder']").click();
         $x("//span[contains(@class, 'multiselect__option')]/span[text() = '"+vacancyCity+"']").click();
