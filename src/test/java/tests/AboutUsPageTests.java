@@ -1,21 +1,23 @@
 package tests;
 
 import com.codeborne.selenide.ElementsCollection;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import config.BaseTest;
+import org.junit.jupiter.api.*;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 @Tag("web")
-public class AboutUsPageTests extends TestBase {
+public class AboutUsPageTests extends config.BaseTest {
+
+    @BeforeEach
+    public void beforeFunction() {
+        open("https://ifellow.ru/");
+    }
+
     @Test
     @DisplayName("Check page \"About Us\"")
     void CheckPageAboutUs() {
-        open("");
         sleep(2000);
         if ($x("//button[@class = 'app-close']").isDisplayed())
             $x("//button[@class = 'app-close']").click();
@@ -34,7 +36,6 @@ public class AboutUsPageTests extends TestBase {
     @Test
     @DisplayName("Check page \"About Com\"")
     void CheckCliderOnPageAboutUs() {
-        open("");
         sleep(2000);
         if ($x("//button[@class = 'app-close']").isDisplayed())
             $x("//button[@class = 'app-close']").click();
@@ -59,7 +60,6 @@ public class AboutUsPageTests extends TestBase {
     @Test
     @DisplayName("Open Main page")
     void loadMainPage() {
-        open("");
         sleep(2000);
         if ($x("//button[@class = 'app-close']").isDisplayed())
             $x("//button[@class = 'app-close']").click();
@@ -69,7 +69,6 @@ public class AboutUsPageTests extends TestBase {
     @Test
     @DisplayName("Check Main menu")
     void checkMainMenu() {
-        open("");
         sleep(2000);
         if ($x("//button[@class = 'app-close']").isDisplayed())
             $x("//button[@class = 'app-close']").click();
@@ -89,10 +88,7 @@ public class AboutUsPageTests extends TestBase {
     @Test
     @DisplayName("Check page \"Vacancies\"")
     void CheckFilterOnVacanciesPage() {
-
         String vacancyCity = "Москва";
-
-        open("");
         sleep(2000);
         if ($x("//button[@class = 'app-close']").isDisplayed())
             $x("//button[@class = 'app-close']").click();
